@@ -5,7 +5,9 @@
 set -euo pipefail
 
 year="$(date +%Y)"
-dest_dir="/home/titus/github/website/static/images/${year}"
+# Default image destination matches a Zed-container Hugo site under the user's home.
+# Override with IMAGES_DIR=/abs/path to ./static/images to point elsewhere.
+dest_dir="${IMAGES_DIR:-$HOME/github/website/static/images}/${year}"
 
 if ! command -v cwebp >/dev/null 2>&1; then
   echo "cwebp not found in PATH" >&2

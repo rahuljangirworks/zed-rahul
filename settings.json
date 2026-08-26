@@ -8,7 +8,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-	"colorize_brackets": true,
+	"proxy": "",
+ "icon_theme": "Zed (Default)",
+ "debugger": {
+  "dock": "left"
+ },
+ "colorize_brackets": true,
 	"code_lens": "on",
 	"toolbar": {
 		"code_actions": true,
@@ -85,8 +90,8 @@
 	},
 	"base_keymap": "VSCode",
 	"theme": {
-		"mode": "dark",
-		"light": "Tokyo Night Light",
+		"mode": "system",
+		"light": "Gruvbox Light Soft",
 		"dark": "One Dark",
 	},
 	"ui_font_size": 17,
@@ -389,14 +394,14 @@
 	"project_panel": {
 		"auto_fold_dirs": false,
 		"button": true,
-		"dock": "right",
+		"dock": "left",
 		"git_status": true,
 	},
 	"outline_panel": {
-		"dock": "right",
+		"dock": "left",
 	},
 	"collaboration_panel": {
-		"dock": "right",
+		"dock": "left",
 	},
 	"autosave": {
 		"after_delay": {

@@ -19,7 +19,7 @@ works around an intermittent X11 presentation race by sending an unused F13
 key event directly to each newly created Zed window. It requires `xdotool`,
 does nothing outside X11 sessions, and can be bypassed with
 `ZED_X11_WAKEUP=0`. Previous launchers are backed up below
-`~/.local/share/zed-titus/backups/`.
+`~/.local/share/zed-<user>/backups/` (e.g. `~/.local/share/zed-rahul/backups/`).
 
 Zed updates may restore the original CLI symlink or desktop entry. Rerun
 `./install` after an update to restore the workaround.
@@ -189,7 +189,7 @@ Windows (PowerShell, creates symlinks in `%APPDATA%\Zed`):
 
 Two tasks are defined:
 1. **Save clipboard image (Hugo)**  
-   Runs `/home/titus/.local/bin/save-img-hugo` in a new terminal, reveals in dock, hides on success, and saves the current file. Triggered by `ctrl-shift-p`.
+   Runs `~/.local/bin/save-img-hugo` in a new terminal, reveals in dock, hides on success, and saves the current file. Triggered by `ctrl-shift-p`. The script writes WebP images under `~/github/website/static/images/<year>/` by default; set `IMAGES_DIR` to override.
 2. **Launch Neovide**  
    Runs `neovide` in the current terminal, reveals in dock without focus, hides on success.
 
@@ -200,6 +200,6 @@ Helper script used by the **Save clipboard image (Hugo)** task:
 - Expects `ZED_FILE` to be set to a **.md** file (Zed provides this when run from a markdown buffer).
 - Prompts for a filename (TTY, `zenity`, or `kdialog`), default `img-YYYYMMDD-HHMMSS`.
 - Saves WebP to:  
-  `/home/titus/github/website/static/images/<year>/<name>.webp`
+  `~/github/website/static/images/<year>/<name>.webp` (override with `IMAGES_DIR`)
 - Inserts a Markdown image link into the current file, at `ZED_ROW` when available.
 - Copies the Markdown link to the clipboard.

@@ -1,7 +1,7 @@
 [
 	{
 		"label": "Save clipboard image (Hugo)",
-		"command": "/home/titus/.local/bin/save-img-hugo",
+		"command": "/home/rahul/.local/bin/save-img-hugo",
 		"use_new_terminal": true,
 		"allow_concurrent_runs": false,
 		"reveal": "always",
