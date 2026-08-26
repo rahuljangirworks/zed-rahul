@@ -21,6 +21,9 @@ link_json_files() {
 
   local source destination
   for source in "${files[@]}"; do
+    # STATE.json is a RahulOS pointer file, not a Zed config file.
+    # Never symlink it into Zed's config dir.
+    [[ ${source##*/} == STATE.json ]] && continue
     destination="$ZED_CONFIG_DIR/${source##*/}"
     ln -sfn "$source" "$destination"
     printf 'Linked %s -> %s\n' "$destination" "$source"
