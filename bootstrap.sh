@@ -41,9 +41,9 @@ tmp="$(mktemp -d)"
 cleanup() { rm -rf "$tmp"; }
 trap cleanup EXIT
 
-# Maple Mono NF — official build (nerd-fonts does not ship Maple Mono).
+# Detect by on-disk font files (reliable, independent of fontconfig cache state).
 maple_url="https://github.com/subframe7536/maple-font/releases/download/${MAPLE_VER}/MapleMono-NF.zip"
-if fc-list 2>/dev/null | grep -qi "Maple Mono NF"; then
+if find "$FONT_DIR/MapleMono-NF" -maxdepth 1 \( -iname '*.ttf' -o -iname '*.otf' \) | grep -q .; then
   echo "Maple Mono NF already installed; skipping download."
 else
   echo "Downloading Maple Mono NF ($maple_url)"
@@ -56,7 +56,7 @@ fi
 
 # JetBrainsMono Nerd Font Mono — from ryanoasis/nerd-fonts.
 jb_url="https://github.com/ryanoasis/nerd-fonts/releases/download/${NERD_VER}/JetBrainsMono.zip"
-if fc-list 2>/dev/null | grep -qi "JetBrainsMono Nerd Font Mono"; then
+if find "$FONT_DIR/JetBrainsMono-NF" -maxdepth 1 \( -iname '*.ttf' -o -iname '*.otf' \) | grep -q .; then
   echo "JetBrainsMono Nerd Font Mono already installed; skipping download."
 else
   echo "Downloading JetBrainsMono Nerd Font Mono ($jb_url)"
