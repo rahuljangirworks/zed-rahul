@@ -1,0 +1,23 @@
+.agent
+
+# RahulOS project-management pointer/compat layer (not part of the Zed repo)
+# These are managed by the RahulOS vault brain and must not be committed/pushed.
+# NOTE: .gitignore itself must stay tracked, so it is intentionally NOT listed here.
+AGENTS.md
+CLAUDE.md
+ACTIVE_TASK.md
+STATE.json
+README-AI.md
+GEMINI.md
+KILO.md
+OPENCODE.md
+QWEN.md
+.hermes.md
+.geminiignore
+.cursor
+.cursorrules
+.clinerules
+.gemini
+.kilocode
+.windsurf
+.windsurfrules
