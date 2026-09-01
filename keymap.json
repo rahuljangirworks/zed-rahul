@@ -1,4 +1,12 @@
 [
+  // Restore standard clipboard shortcuts when Vim mode is enabled.
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
+    },
+  },
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {

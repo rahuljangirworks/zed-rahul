@@ -41,12 +41,6 @@
 		"claude-acp": {
 			"type": "registry",
 		},
-		"amp-acp": {
-			"type": "registry",
-		},
-		"factory-droid": {
-			"type": "registry",
-		},
 		"opencode": {
 			"favorite_config_option_values": {
 				"model": ["opencode-go/glm-5.1"],
@@ -55,7 +49,7 @@
 		},
 	},
 	"session": {
-		"trust_all_worktrees": true,
+		"trust_all_worktrees": false,
 	},
 	"git": {
 		"inline_blame": {
@@ -164,6 +158,7 @@
 			"enable_thinking": false,
 		},
 		"tool_permissions": {
+			"default": "allow",
 			"tools": {
 				"fetch": {
 					"default": "allow",

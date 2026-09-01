@@ -78,10 +78,12 @@ Windows (PowerShell, creates symlinks in `%APPDATA%\Zed`):
   - CLIProxyAPI / gpt-5.6-terra
   - CLIProxyAPI / gpt-5.6-luna
 - Inline assistant model set to **CLIProxyAPI / gpt-5.6-sol**.
-- Tool permissions default **allow** for `fetch` and `terminal`.
-- Registers several optional agent servers (registry): `pi-acp`, `kilo`,
-  `gemini`, `cursor`, `codex-acp`, `claude-acp`, `amp-acp`,
-  `factory-droid`, and `opencode` (favorite model **opencode-go/glm-5.1**).
+- Tool permissions default **allow** for all agent tools, including `fetch`
+  and `terminal`.
+- Registers optional agent servers (registry): `pi-acp`, `kilo`, `gemini`,
+  `cursor`, `codex-acp`, `claude-acp`, and `opencode` (favorite model
+  **opencode-go/glm-5.1**). The configuration does not select a
+  permission-bypass or full-access mode for any of them.
 - Does not register either GitHub Copilot agent server.
 
 ### Language models (custom providers)
@@ -119,9 +121,13 @@ Windows (PowerShell, creates symlinks in `%APPDATA%\Zed`):
 - Diagnostics **enabled**, metrics **disabled**.
 
 ### Collaboration/session
-- Trusts all worktrees for session.
+- Does not automatically trust all worktrees for a session.
 
 ## keymap.json
+
+### Clipboard
+- `ctrl-c` copies and `ctrl-v` pastes in the editor, including while Vim mode
+  is enabled.
 
 ### Vim normal/visual mode (leader: `space`)
 - Git: `space g h d` toggle selected diff hunks, `space g s` toggle git panel focus.
